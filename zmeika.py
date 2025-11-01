@@ -9,7 +9,7 @@ x = "x "
 V = "r"
 h = "# "
 Apple = "a "
-step = 375
+step = 0
 field = [[h,h,h,x,x,x,x,x,x,x], 
         [x,x,x,x,x,x,x,x,x,x],         
         [x,x,x,x,x,x,x,x,x,x], 
