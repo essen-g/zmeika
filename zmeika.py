@@ -70,7 +70,7 @@ def apple(field):
         apple_coord = [randint(0, 9), randint(0, 9)]
     if not apple_coord in zmeika:
         field[apple_coord[0]][apple_coord[1]] = Apple
-def die(apples):
+def die():
     global score
     cls()
     print("GAME OVER")
@@ -83,7 +83,7 @@ def move(zmeika, V):
     match V:
         case 'r':
             if zmeika[0][1] == 9:
-                die(apples)
+                die()
             check = list(zmeika[0])
             check[1] += 1
             if apples == 0:
@@ -101,11 +101,11 @@ def move(zmeika, V):
                 zmeika[a] = list(zmeika[a-1])
             zmeika[0][1] += 1
             if list(zmeika[0]) in list(zmeika[1::]):
-                die(apples)
+                die()
             field[zmeika[0][0]][zmeika[0][1]] = h
         case 'l':
             if zmeika[0][1] == 0:
-                die(apples)
+                die()
             check = list(zmeika[0])
             check[1] -= 1
             if apples == 0:
@@ -123,11 +123,11 @@ def move(zmeika, V):
                 zmeika[a] = list(zmeika[a-1])
             zmeika[0][1] -= 1
             if list(zmeika[0]) in list(zmeika[1::]):
-                die(apples)
+                die()
             field[zmeika[0][0]][zmeika[0][1]] = h
         case 'u':
             if zmeika[0][0] == 0:
-                die(apples)
+                die()
             check = list(zmeika[0])
             check[0] -= 1
             if apples == 0:
@@ -145,11 +145,11 @@ def move(zmeika, V):
                 zmeika[a] = list(zmeika[a-1])
             zmeika[0][0] -= 1
             if list(zmeika[0]) in list(zmeika[1::]):
-                die(apples)
+                die()
             field[zmeika[0][0]][zmeika[0][1]] = h
         case 'd':
             if zmeika[0][0] == 9:
-                die(apples)
+                die()
             check = list(zmeika[0])
             check[0] += 1
             if apples == 0:
@@ -167,7 +167,7 @@ def move(zmeika, V):
                 zmeika[a] = list(zmeika[a-1])
             zmeika[0][0] += 1
             if list(zmeika[0]) in list(zmeika[1::]):
-                die(apples)
+                die()
             field[zmeika[0][0]][zmeika[0][1]] = h
 listener.start()
 while True:
